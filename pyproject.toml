@@ -10,7 +10,8 @@ authors = [
     { name = "Frederik Schwarz", email = "frederik@example.com" }
 ]
 dependencies = [
-    "numpy"
+    "numpy",
+    "torch"
 ]
 
 [tool.setuptools]

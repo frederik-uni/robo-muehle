@@ -1,0 +1,41 @@
+Presentation:
+- Introduction (Eugen) 
+- Methods (Marie)   
+- Work process (Kitti)
+- Artificial intelligence (Frederik)
+- Movement of the robot (Karla/Eugen)
+- Demo and conclusion (Eugen)
+
+
+
+Paper:
+- Computer vision:
+    - Model Selection (Marie)
+    - Dataset and Labeling (Marie)
+    - Board detection (Marie)
+    - Perspective normalization (Kitti)
+    - Stone/stack detection and candidate extraction (Kitti)
+    - Index mapping and state building (Kitti)
+- AI:
+    - 
+- Movement of the robot:
+    -
+
+
+
+OnePager (Marie)
+
+
+
+Code:
+- Computer vision:
+    - Labeling (models) (Marie)
+    - Index mapping (Marie)
+    - Homography (Kitti)
+    - class Detector (Kitti)
+    - Bug fixing (Marie/Kitti)
+    - The task were completed together. The brackets only indicate the person who primarily worked on that section.
+- AI:
+    - 
+- Movement of the robot:
+    -

@@ -10,12 +10,16 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [
     { name = "Frederik Schwarz", email = "frederik@example.com" },
-    { name = "Eugen Ganscha", email = "eugen.ganscha@hof-university.de" }
+    { name = "Eugen Ganscha", email = "eugen.ganscha@hof-university.de" },
+    { name = "Marie Müller", email = "marie.mueller@hof-university.de" },
+    { name = "Kitti Kern", email = "kitti.kern@hof-university.de" }
 ]
 dependencies = [
     "numpy",
     "torch",
-    "pyniryo"
+    "pyniryo",
+    "ultralytics",
+    "opencv-python"
 ]
 
 [tool.setuptools]

@@ -1,0 +1,7 @@
+path: data/stacks
+
+train: images/train
+val: images/val
+
+nc: 2
+names: [black_stack, white_stack]

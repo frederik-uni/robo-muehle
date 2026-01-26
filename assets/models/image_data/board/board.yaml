@@ -1,0 +1,8 @@
+path: data/board
+
+train: images/train
+val: images/val
+
+nc: 1
+names: 
+  0: board

@@ -1,0 +1,7 @@
+path: data/stones
+
+train: images/train
+val: images/val
+
+nc: 2
+names: [black_stone, white_stone]

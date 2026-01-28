@@ -1,13 +1,26 @@
+import os
 import cv2
 
 _CAP = None
 
-def get_camera(index: int = 0):
+def _source():
+    src = os.environ.get("CAMERA_SRC", "0")
+    try:
+        return int(src)
+    except ValueError:
+        return src
+    
+def get_camera(source=None):
     global _CAP
+    if source is None:
+        source = _source()
     if _CAP is None:
-        _CAP = cv2.VideoCapture(index)
+        if isinstance(source, int):
+            _CAP = cv2.VideoCapture(source, cv2.CAP_DSHOW)
+        else:
+            _CAP = cv2.VideoCapture(source)
         if not _CAP.isOpened():
-            raise RuntimeError(f"Could not open camera {index}")
+            raise RuntimeError(f"Could not open camera source: {source}")
     return _CAP
 
 def get_frame_bgr():

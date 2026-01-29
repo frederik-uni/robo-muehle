@@ -32,7 +32,7 @@ def run_game_loop(
         from_idx, to, remove = ai.get_complete_move(game)
         robot.move(from_idx=from_idx, to_idx=to)
         game.move(from_idx, to)
-        if remove:
+        if remove is not None:
             robot.move(from_idx=remove, to_idx=None)
             game.remove_piece(remove)
         if game.is_terminal():

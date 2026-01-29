@@ -1,12 +1,11 @@
 from ultralytics import YOLO
 from typing import Callable, Optional, Any
 import time
-
+import numpy as np
 
 from imagedetection.board_geometry import BoardIndexMap
 from imagedetection.homography import warp_from_corners
 from imagedetection.index_mapping import nearest_index, estimate_grid_spacing_px, build_state_dict
-from imagedetection.morris_ascii import render_morris_ascii
 from imagedetection.vision.stone_center import stone_centers
 from imagedetection.vision.board_bbox import best_board_box, corners_from_bbox
 from imagedetection.vision.debug_vis import _resize_to_height, _hstack_safe
@@ -21,7 +20,7 @@ class Detector:
         stacks_model_path: str | None=None,
         conf_min: float = 0.25,
         conf_accept: float = 0.45,
-        dist_max_factor: float = 0.9,
+        dist_max_factor: float = 0.7,
         black_cls_id: int = 0,
         white_cls_id: int = 1,
         frame_provider: Optional[Callable[[], Any]] = None
@@ -50,7 +49,7 @@ class Detector:
 
         corners = corners_from_bbox(*box)
         warped, H = warp_from_corners(img_bgr, corners)
-
+        warped = np.ascontiguousarray(warped)
         
         stones_res0 = self.stones_model(warped)[0]
         
@@ -63,7 +62,7 @@ class Detector:
 
             if dist > self.dist_max:
                 continue
-
+                
             candidate = {
                 "cls_id": cls_id, 
                 "conf": conf, 
@@ -86,6 +85,7 @@ class Detector:
             d in best_per_idx.items() if d["conf"] >= self.conf_accept
         }
 
+
         vis_orig = board_res0.plot(img=img_bgr.copy())
         
         if self.stacks_model is not None:
@@ -106,9 +106,6 @@ class Detector:
         state = {i: remap[v] for i, v in state.items()}
 
 
-        ascii_board = render_morris_ascii(state, mode="value")
-
-
         h = 560
         left = _resize_to_height(vis_orig, h)
         right = _resize_to_height(vis_warp, h)
@@ -120,23 +117,18 @@ class Detector:
         state_arr = [state[i] for i in order]
 
 
-        return state, {
-            #"H": H, 
-            "ascii": ascii_board,
+        return state, { 
             "debug_vis": debug_vis,
             "state_arr": state_arr
-        }
-    
+        }    
+
 
     def _game_state_arr(self, game) -> list[int]:
 
-        #return [int(x) for x in game.board]
         return game.board.astype(int).tolist()
 
 
     def _infer_human_delta(self, prev: list[int], curr: list[int]) -> dict:
-   
-        #order = self.board.get_abs_indices()
 
         changed = []
         for i, (a, b) in enumerate(zip(prev, curr)):
@@ -173,7 +165,7 @@ class Detector:
             if from_idx is not None:
                 return {"from_idx": from_idx, "to_idx": to_idx, "remove_idx": remove_idx, "player": player}
 
-        raise RuntimeError(f"Unklarer Delta-Übergang prev->curr, changes={changed}")
+        raise RuntimeError(f"Unclear Delta transition prev->curr, changes={changed}")
 
 
     def _apply_delta_to_game(self, game, delta: dict) -> None:
@@ -183,7 +175,7 @@ class Detector:
         remove_idx = delta["remove_idx"]
 
         if to_idx is not None:
-            game.place_piece(to_idx)
+             game.move(from_idx, to_idx)
 
         if remove_idx is not None:
             game.remove_piece(remove_idx)
@@ -207,7 +199,7 @@ class Detector:
         for _ in range(max_frames):
             if img_bgr is None:
                 if self.frame_provider is None:
-                    raise RuntimeError("Kein img_bgr übergeben und kein frame_provider im Detector gesetzt.")
+                    raise RuntimeError("No img_bgr was passed and no frame_provider was set in the detector.")
                 frame = self.frame_provider()
             else:
                 frame = img_bgr
@@ -234,9 +226,7 @@ class Detector:
                     return {
                         "delta": delta,
                         "vision": {
-                            "ascii": stable_info["ascii"],
                             "debug_vis": stable_info["debug_vis"],
-                            #"H": stable_info["H"],
                             "state_arr": stable_info["state_arr"],
                         },
                     }
@@ -244,5 +234,5 @@ class Detector:
             if img_bgr is None:
                 time.sleep(sleep_s)
 
-        raise TimeoutError("Kein stabiler menschlicher Zug erkannt (max_frames erreicht).")
+        raise TimeoutError("No stable human train detected (max_frames reached).")
 

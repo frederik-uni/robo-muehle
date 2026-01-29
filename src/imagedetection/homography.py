@@ -63,7 +63,6 @@ def warp_to_board(
     return warped
 
 
-# optional: convenience wrapper
 def warp_from_corners(
     image_bgr: np.ndarray,
     corners_src: Iterable[Tuple[float, float]],
@@ -75,7 +74,6 @@ def warp_from_corners(
     return warped, H
 
 
-# optional: helper function
 def load_image(path: str | Path) -> np.ndarray:
     img = cv2.imread(str(path), cv2.IMREAD_COLOR)
     if img is None:

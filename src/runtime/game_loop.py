@@ -1,11 +1,15 @@
-from ai_placeholder import Ai
+from ai.train import SelfPlayAgent
+from imagedetection.detector import Detector
 from muehle_game import Muehle
 from piecewalker.ned2 import Ned2
-from imagedetection.detector import Detector
 
 
 def run_game_loop(
-    robot: Ned2, detector: Detector, ai: Ai, human_start: bool, robot_only=False
+    robot: Ned2,
+    detector: Detector,
+    ai: SelfPlayAgent,
+    human_start: bool,
+    robot_only=False,
 ):
     game = Muehle()
     skip_first = not human_start
@@ -14,7 +18,7 @@ def run_game_loop(
             skip_first = False
         else:
             if robot_only:
-                from_idx, to, remove = ai.next_complete_move(game)
+                from_idx, to, remove = ai.get_complete_move(game)
                 robot.move(from_idx=from_idx, to_idx=to)
                 game.move(from_idx, to)
                 if remove:
@@ -25,7 +29,7 @@ def run_game_loop(
                 detector.get_next_gamestate(game)
             if game.is_terminal():
                 break
-        from_idx, to, remove = ai.next_complete_move(game)
+        from_idx, to, remove = ai.get_complete_move(game)
         robot.move(from_idx=from_idx, to_idx=to)
         game.move(from_idx, to)
         if remove is not None:

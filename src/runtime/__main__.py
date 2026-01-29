@@ -1,4 +1,5 @@
-from ai_placeholder import Ai
+from ai.play import load_model
+from imagedetection.detector import Detector
 from piecewalker.ned2 import Ned2
 from runtime import game_loop
 from imagedetection.detector import Detector
@@ -7,11 +8,12 @@ from .args import parse_args
 
 from runtime.camera_provider import get_frame_bgr
 
+from .args import parse_args
 
 if __name__ == "__main__":
     args = parse_args()
     ned2 = Ned2()
-    ai = Ai(args.model_play)
+    ai = load_model(args.model_play)
     detector = Detector(
         board_indices_csv="assets/indices/board_indices.csv",
         board_model_path="assets/models/board_best.pt",

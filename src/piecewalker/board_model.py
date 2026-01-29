@@ -4,6 +4,9 @@ from typing import Dict, Any, List
 from piecewalker.calibration.helper import parse_calibration_toml
 from runtime.args import parse_args
 
+# Note Docstrings are partially or fully written by ChatGPT,
+# but I can't be asked to write them out myself and deleting them
+# is also unwise, as they DO help you understand the functions imo.
 
 @dataclass(frozen=False)
 class XYZ:

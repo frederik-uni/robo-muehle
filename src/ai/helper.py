@@ -9,6 +9,18 @@ from muehle_game import Muehle
 def encode_data(
     env: Muehle, player: Literal[1, -1], removal_pending: bool = False
 ) -> tuple[torch.Tensor, torch.Tensor]:
+    """Encodes the game state into tensors for the policy network.
+
+    Args:
+        env: The Muehle game environment.
+        player: The current player's perspective (1 or -1).
+        removal_pending: Whether a piece removal is pending for the current player.
+
+    Returns:
+        A tuple containing:
+        - board_tensor: A (3, 24) tensor representing the board state (my pieces, opponent pieces, empty spaces).
+        - global_features: A (11,) tensor with global game features.
+    """
     board = env.board
 
     my = (board == player).astype(np.float32)

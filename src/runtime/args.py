@@ -24,7 +24,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model-play",
-        default=None,
+        required=True,
         type=Path,
     )
     parser.add_argument(

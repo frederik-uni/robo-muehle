@@ -5,7 +5,14 @@ import torch.nn.functional as F
 
 # todo: maybe gnn, but ...
 class ThePolicy(nn.Module):
+    """The neural network model for the Muehle AI.
+
+    This model takes the encoded board state and global game features as input
+    and outputs policy logits (for action selection) and a state value (for evaluation).
+    """
+
     def __init__(self):
+        """Initializes the layers of the neural network."""
         super().__init__()
 
         self.in_board_fc = nn.Linear(3 * 24, 128)  # board, op_board, empty
@@ -24,12 +31,18 @@ class ThePolicy(nn.Module):
         self.value_head = nn.Linear(128, 1)
 
     def forward(self, board, global_features):
-        """
-        board: tensor (batch, 3, 24)
-        global_features: tensor (batch, 11)
+        """Performs the forward pass of the model.
+
+        Args:
+            board: A tensor of shape (batch, 3, 24) representing the board state.
+            global_features: A tensor of shape (batch, 11) with global game features.
+
+        Returns:
+            A tuple containing:
+            - policy_logits: Raw logits for each possible action.
+            - value: The predicted value of the current game state, between -1 and 1.
         """
 
-        # preserve batch
         x_board = torch.flatten(board, start_dim=1)
         x_board = F.relu(self.in_board_fc(x_board))
 
@@ -41,7 +54,7 @@ class ThePolicy(nn.Module):
         x = F.relu(self.fc2(x))
 
         policy_logits = self.policy_head(x)
-        if self.training:
+        if True:
             v = F.relu(self.value_fc(x))
             value = torch.tanh(self.value_head(v))
 

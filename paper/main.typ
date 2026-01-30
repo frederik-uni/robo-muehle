@@ -20,7 +20,7 @@
     (
       name: "Karla Schramm",
       organization: [Studiengang Informatik],
-      location: [Matrikelnummer: ],
+      location: [Matrikelnummer: 00487422],
       email: "karla.schramm@hof-university.de"
     ),
     (

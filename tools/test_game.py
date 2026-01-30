@@ -27,7 +27,7 @@ def main():
     )
 
     game = Muehle()
-    print("Starte Human-Input-Test. Mach einen Zug am Brett. (q = quit)")
+    print("Start test. Make a move on the board. (q = quit)")
 
     try:
         while True:

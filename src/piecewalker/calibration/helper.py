@@ -4,6 +4,10 @@ from typing import Any, Dict
 
 from piecewalker.paths import build_paths
 
+# Note Docstrings are partially or fully written by ChatGPT,
+# but I can't be asked to write them out myself and deleting them
+# is also unwise, as they DO help you understand the functions imo.
+
 # Constants
 CALIBRATION_FILE_PREFIX = "calibration_"
 CALIBRATION_FILE_EXTENSION = ".toml"

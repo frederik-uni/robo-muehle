@@ -2,6 +2,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+# Note Docstrings are partially or fully written by ChatGPT,
+# but I can't be asked to write them out myself and deleting them
+# is also unwise, as they DO help you understand the functions imo.
+
 # (I know this is somewhat over-engineered for our current logic,
 # the Paths used to be dynamic and I don't wanna mess with it anymore...)
 PROJECT_ROOT: Path = Path(__file__).resolve().parents[2]

@@ -7,6 +7,3 @@ __pycache__
 
 # Packaging metadata
 *.egg-info/
-
-# Generated calibration outputs
-configs/calibrations/

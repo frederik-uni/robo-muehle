@@ -1,5 +1,5 @@
 graph TD
-    B["global_features"] --->|10| D["Linear + ReLu"] --> |32|F
+    B["global_features"] --->|11| D["Linear + ReLu"] --> |32|F
     A["board"] -->|3x24| C["Flatten"]
     C --> |72| E["Linear + ReLu"]
     E -->|128| F[Concat]

@@ -1,34 +1,36 @@
 import os
 import cv2
+import numpy as np
 
 _CAP = None
 
-def _source():
-    src = os.environ.get("CAMERA_SRC", "0")
-    try:
-        return int(src)
-    except ValueError:
-        return src
-    
-def get_camera(source=None):
-    global _CAP
-    if source is None:
-        source = _source()
-    if _CAP is None:
-        if isinstance(source, int):
-            _CAP = cv2.VideoCapture(source, cv2.CAP_DSHOW)
-        else:
-            _CAP = cv2.VideoCapture(source)
-        if not _CAP.isOpened():
-            raise RuntimeError(f"Could not open camera source: {source}")
-    return _CAP
+
+def get_camera(index: int = 0):
+    cap = cv2.VideoCapture(index)  # kein GStreamer!
+    if not cap.isOpened():
+        raise RuntimeError(f"Could not open camera {index}")
+
+    # optional: direkt ein paar Settings
+    cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
+    cap.set(cv2.CAP_PROP_FPS, 30)
+    return cap
+
 
 def get_frame_bgr():
-    cap = get_camera()
-    ok, frame = cap.read()
-    if not ok:
-        raise RuntimeError("Could not read camera frame")
-    return frame
+    cap = get_camera(1)
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            continue  # kaputter Frame, skip
+
+        # Prüfen, ob Frame nicht komplett schwarz ist
+        if frame is None or np.mean(frame) < 10:  # Threshold anpassen
+            continue  # zu dunkel/black, skip
+
+        cv2.waitKey(1)  # nötig, sonst zeigt OpenCV nichts
+        return cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+
 
 def close_camera():
     global _CAP

@@ -53,8 +53,15 @@ class ActionMapper:
     def get_legal_mask(
         env: Muehle, player: Literal[-1, 1], removal_pending: bool = False
     ) -> np.ndarray:
-        """
-        Create a legal action mask of size TOTAL_ACTIONS.
+        """Create a legal action mask of size TOTAL_ACTIONS.
+
+        Args:
+            env: The Muehle game environment.
+            player: The player for whom to get the legal moves.
+            removal_pending: Whether a piece removal is pending.
+
+        Returns:
+            A boolean numpy array of size TOTAL_ACTIONS, where True indicates a legal move.
         """
         mask = np.zeros(ActionMapper.TOTAL_ACTIONS, dtype=bool)
         board = env.board
@@ -94,6 +101,12 @@ class SelfPlayAgent:
     """Agent that plays using the policy network with exploration."""
 
     def __init__(self, model: ThePolicy, device: torch.device | None = None):
+        """Initializes the SelfPlayAgent.
+
+        Args:
+            model: The policy network to use for action selection.
+            device: The torch device (CPU or CUDA) to run the model on.
+        """
         self.model = model
         self.device = device or torch.device(
             "cuda" if torch.cuda.is_available() else "cpu"
@@ -108,8 +121,20 @@ class SelfPlayAgent:
         temperature: float = 1.0,
         epsilon: float = 0.1,
     ) -> tuple[int, torch.Tensor, torch.Tensor]:
-        """
-        Select an action using the policy network.
+        """Select an action using the policy network, with exploration.
+
+        Args:
+            board_tensor: The encoded board state.
+            global_features: The encoded global game features.
+            legal_mask: A boolean mask of legal actions.
+            temperature: Controls the randomness of action selection. Higher values lead to more random actions.
+            epsilon: The probability of choosing a random action (epsilon-greedy exploration).
+
+        Returns:
+            A tuple containing:
+            - The selected action index.
+            - The raw policy logits from the network.
+            - The predicted state value from the network.
         """
         board_tensor = board_tensor.unsqueeze(0).to(self.device)
         global_features = global_features.unsqueeze(0).to(self.device)
@@ -123,7 +148,7 @@ class SelfPlayAgent:
         )
 
         masked_logits = policy_logits.clone()
-        masked_logits[~legal_mask_tensor] = -1e9
+        masked_logits[0, ~legal_mask_tensor] = -1e9
 
         if random.random() < epsilon:
             legal_indices = torch.where(legal_mask_tensor)[0]
@@ -171,7 +196,7 @@ class SelfPlayAgent:
             legal_mask, dtype=torch.bool, device=self.device
         )
         masked_logits = policy_logits.clone()
-        masked_logits[~legal_mask_tensor] = -1e9
+        masked_logits[0, ~legal_mask_tensor] = -1e9
 
         action_idx = torch.argmax(masked_logits).item()
         source, target = ActionMapper.from_index(action_idx)
@@ -235,6 +260,18 @@ class SelfPlayTrainer:
         max_grad_norm: float = 0.5,
         device: torch.device | None = None,
     ):
+        """Initializes the SelfPlayTrainer.
+
+        Args:
+            model: The policy model to be trained.
+            learning_rate: The learning rate for the optimizer.
+            gamma: The discount factor for future rewards.
+            gae_lambda: The lambda factor for Generalized Advantage Estimation (GAE).
+            entropy_coef: The coefficient for the entropy bonus in the loss function.
+            value_coef: The coefficient for the value loss in the loss function.
+            max_grad_norm: The maximum norm for gradient clipping.
+            device: The torch device (CPU or CUDA) to run the training on.
+        """
         self.model = model
         self.device = device or torch.device(
             "cuda" if torch.cuda.is_available() else "cpu"
@@ -251,9 +288,19 @@ class SelfPlayTrainer:
     def collect_episode(
         self, temperature: float = 1.0, epsilon: float = 0.1
     ) -> tuple[List[dict], int]:
-        """
-        Play one episode of self-play, collecting trajectory data with enhanced rewards.
-        Returns the trajectory and the winner of the game.
+        """Play one full episode of self-play, collecting data for training.
+
+        The agent plays against itself, and each step (state, action, reward, etc.)
+        is recorded. Exploration is controlled by the temperature and epsilon parameters.
+
+        Args:
+            temperature: Controls the randomness of action selection.
+            epsilon: The probability of choosing a random action.
+
+        Returns:
+            A tuple containing:
+            - trajectory: A list of dictionaries, where each dictionary represents a step in the episode.
+            - winner: The winner of the game (1, -1, or 0 for a draw).
         """
         env = Muehle()
         trajectory = []
@@ -268,6 +315,8 @@ class SelfPlayTrainer:
             if removal_pending and removal_player != current_player:
                 removal_pending = False
                 removal_player = None
+
+            almost_mills_player_before = env.count_almost_mills(current_player)
 
             legal_mask_np = ActionMapper.get_legal_mask(
                 env, current_player, removal_pending
@@ -297,14 +346,39 @@ class SelfPlayTrainer:
             try:
                 source, target = ActionMapper.from_index(action_idx)
                 if removal_pending:
+                    is_breaking_mill = env.is_mill(target, -current_player)
                     result = env.remove_piece(target)
                     reward += 2.0
+                    if is_breaking_mill:
+                        reward += 0.5
                     removal_pending = False
                     removal_player = None
                     if result == 0:
                         env.player = cast(Literal[1, -1], -env.player)
                 else:
+                    is_blocking = False
+                    for mill in env.mills:
+                        if target in mill:
+                            pieces = [env.board[p] for p in mill]
+                            if (
+                                pieces.count(-current_player) == 2
+                                and pieces.count(0) == 1
+                            ):
+                                is_blocking = True
+                                break
+
                     result = env.move(None if source == 24 else source, target)
+
+                    if is_blocking:
+                        reward += 0.7
+
+                    if result != "remove":
+                        almost_mills_player_after = env.count_almost_mills(
+                            current_player
+                        )
+                        if almost_mills_player_after > almost_mills_player_before:
+                            reward += 0.5
+
                     if result == "remove":
                         reward += 1.0
                         removal_pending = True
@@ -335,6 +409,16 @@ class SelfPlayTrainer:
     def compute_advantages(
         self, trajectory: List[dict]
     ) -> tuple[torch.Tensor, torch.Tensor]:
+        """Computes the Generalized Advantage Estimation (GAE) and returns for a given trajectory.
+
+        Args:
+            trajectory: A list of steps collected from an episode.
+
+        Returns:
+            A tuple containing:
+            - advantages: A tensor of computed advantages for each step.
+            - returns: A tensor of computed returns (discounted rewards) for each step.
+        """
         if not trajectory:
             return torch.tensor([]), torch.tensor([])
 
@@ -358,6 +442,16 @@ class SelfPlayTrainer:
         return advantages, returns
 
     def update_model(self, trajectory: List[dict]) -> dict:
+        """Updates the policy and value networks using the collected trajectory data.
+
+        This method computes the loss and performs a gradient descent step.
+
+        Args:
+            trajectory: A list of steps collected from one or more episodes.
+
+        Returns:
+            A dictionary containing information about the losses (total, policy, value) and entropy.
+        """
         if not trajectory:
             return {}
 
@@ -383,7 +477,7 @@ class SelfPlayTrainer:
         values = values.squeeze()
 
         masked_logits = policy_logits.clone()
-        masked_logits[~legal_mask_batch] = -float("inf")
+        masked_logits[~legal_mask_batch] = -1e9
 
         log_probs = F.log_softmax(masked_logits, dim=-1)
         action_log_probs = log_probs.gather(1, actions.unsqueeze(1)).squeeze()
@@ -416,6 +510,18 @@ class SelfPlayTrainer:
         save_every: int = 100,
         save_path: str = "policy_checkpoint.pth",
     ):
+        """Runs the main training loop for a specified number of episodes.
+
+        It collects self-play episodes, updates the model periodically, and saves checkpoints.
+
+        Args:
+            num_episodes: The total number of episodes to train for.
+            episodes_per_update: The number of episodes to collect before each model update.
+            temperature: The exploration temperature for action selection.
+            epsilon: The exploration epsilon for action selection.
+            save_every: The interval (in episodes) for saving model checkpoints.
+            save_path: The path to save model checkpoints.
+        """
         print(f"Starting training on {self.device}")
         print(f"Total parameters: {sum(p.numel() for p in self.model.parameters()):,}")
 
@@ -461,7 +567,7 @@ def main():
     model = ThePolicy()
     trainer = SelfPlayTrainer(
         model,
-        learning_rate=3e-4,
+        learning_rate=1e-4,
         gamma=0.99,
         gae_lambda=0.95,
         entropy_coef=0.01,

@@ -17,10 +17,7 @@ def parse_move(s: str) -> tuple[Optional[int], int, Optional[int]]:
         raise ValueError("Expected format: <int|none>,<int>,<int|none>")
 
     def to_int_or_none(value: str) -> Optional[int]:
-        try:
-            return int(value)
-        except ValueError:
-            return None
+        return int(value) if value else None
 
     a = to_int_or_none(parts[0])
     b = to_int_or_none(parts[1])

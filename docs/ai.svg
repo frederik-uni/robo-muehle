@@ -1,1 +1,536 @@
-<svg id="mermaid-diagram-desktop" width="100%" xmlns="http://www.w3.org/2000/svg" class="flowchart" style="max-width: 510.265625px;" viewBox="0 0 510.265625 1094" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-diagram-desktop{font-family:Arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-diagram-desktop .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-diagram-desktop .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-diagram-desktop .error-icon{fill:#552222;}#mermaid-diagram-desktop .error-text{fill:#552222;stroke:#552222;}#mermaid-diagram-desktop .edge-thickness-normal{stroke-width:1px;}#mermaid-diagram-desktop .edge-thickness-thick{stroke-width:3.5px;}#mermaid-diagram-desktop .edge-pattern-solid{stroke-dasharray:0;}#mermaid-diagram-desktop .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-diagram-desktop .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-diagram-desktop .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-diagram-desktop .marker{fill:#333333;stroke:#333333;}#mermaid-diagram-desktop .marker.cross{stroke:#333333;}#mermaid-diagram-desktop svg{font-family:Arial,sans-serif;font-size:16px;}#mermaid-diagram-desktop p{margin:0;}#mermaid-diagram-desktop .label{font-family:Arial,sans-serif;color:#333;}#mermaid-diagram-desktop .cluster-label text{fill:#333;}#mermaid-diagram-desktop .cluster-label span{color:#333;}#mermaid-diagram-desktop .cluster-label span p{background-color:transparent;}#mermaid-diagram-desktop .label text,#mermaid-diagram-desktop span{fill:#333;color:#333;}#mermaid-diagram-desktop .node rect,#mermaid-diagram-desktop .node circle,#mermaid-diagram-desktop .node ellipse,#mermaid-diagram-desktop .node polygon,#mermaid-diagram-desktop .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-diagram-desktop .rough-node .label text,#mermaid-diagram-desktop .node .label text,#mermaid-diagram-desktop .image-shape .label,#mermaid-diagram-desktop .icon-shape .label{text-anchor:middle;}#mermaid-diagram-desktop .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-diagram-desktop .rough-node .label,#mermaid-diagram-desktop .node .label,#mermaid-diagram-desktop .image-shape .label,#mermaid-diagram-desktop .icon-shape .label{text-align:center;}#mermaid-diagram-desktop .node.clickable{cursor:pointer;}#mermaid-diagram-desktop .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-diagram-desktop .arrowheadPath{fill:#333333;}#mermaid-diagram-desktop .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-diagram-desktop .flowchart-link{stroke:#333333;fill:none;}#mermaid-diagram-desktop .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-diagram-desktop .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-diagram-desktop .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-diagram-desktop .cluster text{fill:#333;}#mermaid-diagram-desktop .cluster span{color:#333;}#mermaid-diagram-desktop div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:Arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-diagram-desktop .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-diagram-desktop rect.text{fill:none;stroke-width:0;}#mermaid-diagram-desktop .icon-shape,#mermaid-diagram-desktop .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-diagram-desktop .icon-shape p,#mermaid-diagram-desktop .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-diagram-desktop .icon-shape rect,#mermaid-diagram-desktop .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-diagram-desktop .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-diagram-desktop :root{--mermaid-font-family:Arial,sans-serif;}</style><g><marker id="mermaid-diagram-desktop_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-diagram-desktop_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-diagram-desktop_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-diagram-desktop_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-diagram-desktop_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-diagram-desktop_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M140.191,62L140.191,68.167C140.191,74.333,140.191,86.667,140.191,103.5C140.191,120.333,140.191,141.667,140.191,163C140.191,184.333,140.191,205.667,140.191,221.833C140.191,238,140.191,249,140.191,254.5L140.191,260" id="L_B_D_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M140.191,318L140.191,324.167C140.191,330.333,140.191,342.667,149.785,354.654C159.379,366.642,178.567,378.283,188.161,384.104L197.755,389.925" id="L_D_F_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M351.16,62L351.16,68.167C351.16,74.333,351.16,86.667,351.16,98.333C351.16,110,351.16,121,351.16,126.5L351.16,132" id="L_A_C_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M351.16,190L351.16,196.167C351.16,202.333,351.16,214.667,351.16,226.333C351.16,238,351.16,249,351.16,254.5L351.16,260" id="L_C_E_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M351.16,318L351.16,324.167C351.16,330.333,351.16,342.667,341.566,354.654C331.972,366.642,312.785,378.283,303.191,384.104L293.597,389.925" id="L_E_F_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M245.676,446L245.676,452.167C245.676,458.333,245.676,470.667,245.676,482.333C245.676,494,245.676,505,245.676,510.5L245.676,516" id="L_F_G_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M245.676,574L245.676,580.167C245.676,586.333,245.676,598.667,245.676,610.333C245.676,622,245.676,633,245.676,638.5L245.676,644" id="L_G_H_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M188.273,702L175.162,708.167C162.052,714.333,135.831,726.667,122.72,743.5C109.609,760.333,109.609,781.667,109.609,803C109.609,824.333,109.609,845.667,109.609,861.833C109.609,878,109.609,889,109.609,894.5L109.609,900" id="L_H_I_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M109.609,958L109.609,964.167C109.609,970.333,109.609,982.667,122.681,994.982C135.753,1007.297,161.897,1019.594,174.969,1025.742L188.041,1031.891" id="L_I_J_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M303.079,702L316.189,708.167C329.3,714.333,355.521,726.667,368.632,738.333C381.742,750,381.742,761,381.742,766.5L381.742,772" id="L_H_K_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M381.742,830L381.742,836.167C381.742,842.333,381.742,854.667,381.742,866.333C381.742,878,381.742,889,381.742,894.5L381.742,900" id="L_K_L_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/><path d="M381.742,958L381.742,964.167C381.742,970.333,381.742,982.667,368.67,994.982C355.598,1007.297,329.455,1019.594,316.383,1025.742L303.311,1031.891" id="L_L_J_0" class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="" marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(140.19140625, 163)"><g class="label" transform="translate(-8.8984375, -12)"><foreignObject width="17.796875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>10</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(140.19140625, 355)"><g class="label" transform="translate(-8.8984375, -12)"><foreignObject width="17.796875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>32</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(351.16015625, 99)"><g class="label" transform="translate(-17.3515625, -12)"><foreignObject width="34.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>3x24</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(351.16015625, 227)"><g class="label" transform="translate(-8.8984375, -12)"><foreignObject width="17.796875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>72</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(351.16015625, 355)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>128</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(245.67578125, 483)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>160</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(245.67578125, 611)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>256</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(109.609375, 803)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>256</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(109.609375, 995)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>600</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(381.7421875, 739)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>256</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(381.7421875, 867)"><g class="label" transform="translate(-13.3515625, -12)"><foreignObject width="26.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>128</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(381.7421875, 995)"><g class="label" transform="translate(-4.453125, -12)"><foreignObject width="8.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel "><p>1</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default  " id="flowchart-B-0" transform="translate(140.19140625, 35)"><rect class="basic label-container" style="" x="-84.7109375" y="-27" width="169.421875" height="54"/><g class="label" style="" transform="translate(-54.7109375, -12)"><rect/><foreignObject width="109.421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>global_features</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-D-1" transform="translate(140.19140625, 291)"><rect class="basic label-container" style="" x="-80.484375" y="-27" width="160.96875" height="54"/><g class="label" style="" transform="translate(-50.484375, -12)"><rect/><foreignObject width="100.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Linear + ReLu</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-F-2" transform="translate(245.67578125, 419)"><rect class="basic label-container" style="" x="-55.3515625" y="-27" width="110.703125" height="54"/><g class="label" style="" transform="translate(-25.3515625, -12)"><rect/><foreignObject width="50.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Concat</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-A-3" transform="translate(351.16015625, 35)"><rect class="basic label-container" style="" x="-50.4609375" y="-27" width="100.921875" height="54"/><g class="label" style="" transform="translate(-20.4609375, -12)"><rect/><foreignObject width="40.921875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>board</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-C-4" transform="translate(351.16015625, 163)"><rect class="basic label-container" style="" x="-54.4609375" y="-27" width="108.921875" height="54"/><g class="label" style="" transform="translate(-24.4609375, -12)"><rect/><foreignObject width="48.921875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Flatten</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-E-6" transform="translate(351.16015625, 291)"><rect class="basic label-container" style="" x="-80.484375" y="-27" width="160.96875" height="54"/><g class="label" style="" transform="translate(-50.484375, -12)"><rect/><foreignObject width="100.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Linear + ReLu</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-G-10" transform="translate(245.67578125, 547)"><rect class="basic label-container" style="" x="-80.484375" y="-27" width="160.96875" height="54"/><g class="label" style="" transform="translate(-50.484375, -12)"><rect/><foreignObject width="100.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Linear + ReLu</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-H-12" transform="translate(245.67578125, 675)"><rect class="basic label-container" style="" x="-80.484375" y="-27" width="160.96875" height="54"/><g class="label" style="" transform="translate(-50.484375, -12)"><rect/><foreignObject width="100.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Linear + ReLu</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-I-14" transform="translate(109.609375, 931)"><rect class="basic label-container" style="" x="-101.609375" y="-27" width="203.21875" height="54"/><g class="label" style="" transform="translate(-71.609375, -12)"><rect/><foreignObject width="143.21875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>policy_head / Linear</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-J-15" transform="translate(245.67578125, 1059)"><rect class="basic label-container" style="" x="-54.015625" y="-27" width="108.03125" height="54"/><g class="label" style="" transform="translate(-24.015625, -12)"><rect/><foreignObject width="48.03125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Output</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-K-17" transform="translate(381.7421875, 803)"><rect class="basic label-container" style="" x="-80.484375" y="-27" width="160.96875" height="54"/><g class="label" style="" transform="translate(-50.484375, -12)"><rect/><foreignObject width="100.96875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>Linear + ReLu</p></span></div></foreignObject></g></g><g class="node default  " id="flowchart-L-18" transform="translate(381.7421875, 931)"><rect class="basic label-container" style="" x="-120.5234375" y="-27" width="241.046875" height="54"/><g class="label" style="" transform="translate(-90.5234375, -12)"><rect/><foreignObject width="181.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel "><p>value_head / Linear+tanh</p></span></div></foreignObject></g></g></g></g></g></svg>
+<svg
+    id="mermaid-diagram-desktop"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    class="flowchart"
+    style="max-width: 510.265625px;"
+    viewBox="0 0 510.265625 1094"
+    role="graphics-document document"
+    aria-roledescription="flowchart-v2"
+><style
+    >#mermaid-diagram-desktop{font-family:Arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-diagram-desktop .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-diagram-desktop .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-diagram-desktop .error-icon{fill:#552222;}#mermaid-diagram-desktop .error-text{fill:#552222;stroke:#552222;}#mermaid-diagram-desktop .edge-thickness-normal{stroke-width:1px;}#mermaid-diagram-desktop .edge-thickness-thick{stroke-width:3.5px;}#mermaid-diagram-desktop .edge-pattern-solid{stroke-dasharray:0;}#mermaid-diagram-desktop .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-diagram-desktop .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-diagram-desktop .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-diagram-desktop .marker{fill:#333333;stroke:#333333;}#mermaid-diagram-desktop .marker.cross{stroke:#333333;}#mermaid-diagram-desktop svg{font-family:Arial,sans-serif;font-size:16px;}#mermaid-diagram-desktop p{margin:0;}#mermaid-diagram-desktop .label{font-family:Arial,sans-serif;color:#333;}#mermaid-diagram-desktop .cluster-label text{fill:#333;}#mermaid-diagram-desktop .cluster-label span{color:#333;}#mermaid-diagram-desktop .cluster-label span p{background-color:transparent;}#mermaid-diagram-desktop .label text,#mermaid-diagram-desktop span{fill:#333;color:#333;}#mermaid-diagram-desktop .node rect,#mermaid-diagram-desktop .node circle,#mermaid-diagram-desktop .node ellipse,#mermaid-diagram-desktop .node polygon,#mermaid-diagram-desktop .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-diagram-desktop .rough-node .label text,#mermaid-diagram-desktop .node .label text,#mermaid-diagram-desktop .image-shape .label,#mermaid-diagram-desktop .icon-shape .label{text-anchor:middle;}#mermaid-diagram-desktop .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-diagram-desktop .rough-node .label,#mermaid-diagram-desktop .node .label,#mermaid-diagram-desktop .image-shape .label,#mermaid-diagram-desktop .icon-shape .label{text-align:center;}#mermaid-diagram-desktop .node.clickable{cursor:pointer;}#mermaid-diagram-desktop .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-diagram-desktop .arrowheadPath{fill:#333333;}#mermaid-diagram-desktop .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-diagram-desktop .flowchart-link{stroke:#333333;fill:none;}#mermaid-diagram-desktop .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-diagram-desktop .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-diagram-desktop .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-diagram-desktop .cluster text{fill:#333;}#mermaid-diagram-desktop .cluster span{color:#333;}#mermaid-diagram-desktop div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:Arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-diagram-desktop .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-diagram-desktop rect.text{fill:none;stroke-width:0;}#mermaid-diagram-desktop .icon-shape,#mermaid-diagram-desktop .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-diagram-desktop .icon-shape p,#mermaid-diagram-desktop .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-diagram-desktop .icon-shape rect,#mermaid-diagram-desktop .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-diagram-desktop .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-diagram-desktop .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-diagram-desktop :root{--mermaid-font-family:Arial,sans-serif;}</style><g
+    ><marker
+            id="mermaid-diagram-desktop_flowchart-v2-pointEnd"
+            class="marker flowchart-v2"
+            viewBox="0 0 10 10"
+            refX="5"
+            refY="5"
+            markerUnits="userSpaceOnUse"
+            markerWidth="8"
+            markerHeight="8"
+            orient="auto"
+        ><path
+                d="M 0 0 L 10 5 L 0 10 z"
+                class="arrowMarkerPath"
+                style="stroke-width: 1; stroke-dasharray: 1, 0;"
+            /></marker><marker
+            id="mermaid-diagram-desktop_flowchart-v2-pointStart"
+            class="marker flowchart-v2"
+            viewBox="0 0 10 10"
+            refX="4.5"
+            refY="5"
+            markerUnits="userSpaceOnUse"
+            markerWidth="8"
+            markerHeight="8"
+            orient="auto"
+        ><path
+                d="M 0 5 L 10 10 L 10 0 z"
+                class="arrowMarkerPath"
+                style="stroke-width: 1; stroke-dasharray: 1, 0;"
+            /></marker><marker
+            id="mermaid-diagram-desktop_flowchart-v2-circleEnd"
+            class="marker flowchart-v2"
+            viewBox="0 0 10 10"
+            refX="11"
+            refY="5"
+            markerUnits="userSpaceOnUse"
+            markerWidth="11"
+            markerHeight="11"
+            orient="auto"
+        ><circle
+                cx="5"
+                cy="5"
+                r="5"
+                class="arrowMarkerPath"
+                style="stroke-width: 1; stroke-dasharray: 1, 0;"
+            /></marker><marker
+            id="mermaid-diagram-desktop_flowchart-v2-circleStart"
+            class="marker flowchart-v2"
+            viewBox="0 0 10 10"
+            refX="-1"
+            refY="5"
+            markerUnits="userSpaceOnUse"
+            markerWidth="11"
+            markerHeight="11"
+            orient="auto"
+        ><circle
+                cx="5"
+                cy="5"
+                r="5"
+                class="arrowMarkerPath"
+                style="stroke-width: 1; stroke-dasharray: 1, 0;"
+            /></marker><marker
+            id="mermaid-diagram-desktop_flowchart-v2-crossEnd"
+            class="marker cross flowchart-v2"
+            viewBox="0 0 11 11"
+            refX="12"
+            refY="5.2"
+            markerUnits="userSpaceOnUse"
+            markerWidth="11"
+            markerHeight="11"
+            orient="auto"
+        ><path
+                d="M 1,1 l 9,9 M 10,1 l -9,9"
+                class="arrowMarkerPath"
+                style="stroke-width: 2; stroke-dasharray: 1, 0;"
+            /></marker><marker
+            id="mermaid-diagram-desktop_flowchart-v2-crossStart"
+            class="marker cross flowchart-v2"
+            viewBox="0 0 11 11"
+            refX="-1"
+            refY="5.2"
+            markerUnits="userSpaceOnUse"
+            markerWidth="11"
+            markerHeight="11"
+            orient="auto"
+        ><path
+                d="M 1,1 l 9,9 M 10,1 l -9,9"
+                class="arrowMarkerPath"
+                style="stroke-width: 2; stroke-dasharray: 1, 0;"
+            /></marker><g class="root"><g class="clusters" /><g
+                class="edgePaths"
+            ><path
+                    d="M140.191,62L140.191,68.167C140.191,74.333,140.191,86.667,140.191,103.5C140.191,120.333,140.191,141.667,140.191,163C140.191,184.333,140.191,205.667,140.191,221.833C140.191,238,140.191,249,140.191,254.5L140.191,260"
+                    id="L_B_D_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M140.191,318L140.191,324.167C140.191,330.333,140.191,342.667,149.785,354.654C159.379,366.642,178.567,378.283,188.161,384.104L197.755,389.925"
+                    id="L_D_F_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M351.16,62L351.16,68.167C351.16,74.333,351.16,86.667,351.16,98.333C351.16,110,351.16,121,351.16,126.5L351.16,132"
+                    id="L_A_C_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M351.16,190L351.16,196.167C351.16,202.333,351.16,214.667,351.16,226.333C351.16,238,351.16,249,351.16,254.5L351.16,260"
+                    id="L_C_E_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M351.16,318L351.16,324.167C351.16,330.333,351.16,342.667,341.566,354.654C331.972,366.642,312.785,378.283,303.191,384.104L293.597,389.925"
+                    id="L_E_F_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M245.676,446L245.676,452.167C245.676,458.333,245.676,470.667,245.676,482.333C245.676,494,245.676,505,245.676,510.5L245.676,516"
+                    id="L_F_G_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M245.676,574L245.676,580.167C245.676,586.333,245.676,598.667,245.676,610.333C245.676,622,245.676,633,245.676,638.5L245.676,644"
+                    id="L_G_H_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M188.273,702L175.162,708.167C162.052,714.333,135.831,726.667,122.72,743.5C109.609,760.333,109.609,781.667,109.609,803C109.609,824.333,109.609,845.667,109.609,861.833C109.609,878,109.609,889,109.609,894.5L109.609,900"
+                    id="L_H_I_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M109.609,958L109.609,964.167C109.609,970.333,109.609,982.667,122.681,994.982C135.753,1007.297,161.897,1019.594,174.969,1025.742L188.041,1031.891"
+                    id="L_I_J_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M303.079,702L316.189,708.167C329.3,714.333,355.521,726.667,368.632,738.333C381.742,750,381.742,761,381.742,766.5L381.742,772"
+                    id="L_H_K_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M381.742,830L381.742,836.167C381.742,842.333,381.742,854.667,381.742,866.333C381.742,878,381.742,889,381.742,894.5L381.742,900"
+                    id="L_K_L_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /><path
+                    d="M381.742,958L381.742,964.167C381.742,970.333,381.742,982.667,368.67,994.982C355.598,1007.297,329.455,1019.594,316.383,1025.742L303.311,1031.891"
+                    id="L_L_J_0"
+                    class=" edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                    style=""
+                    marker-end="url(#mermaid-diagram-desktop_flowchart-v2-pointEnd)"
+                /></g><g class="edgeLabels"><g
+                    class="edgeLabel"
+                    transform="translate(140.19140625, 163)"
+                ><g
+                        class="label"
+                        transform="translate(-8.8984375, -12)"
+                    ><foreignObject width="17.796875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >11</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(140.19140625, 355)"
+                ><g
+                        class="label"
+                        transform="translate(-8.8984375, -12)"
+                    ><foreignObject width="17.796875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >32</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(351.16015625, 99)"
+                ><g
+                        class="label"
+                        transform="translate(-17.3515625, -12)"
+                    ><foreignObject width="34.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >3x24</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(351.16015625, 227)"
+                ><g
+                        class="label"
+                        transform="translate(-8.8984375, -12)"
+                    ><foreignObject width="17.796875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >72</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(351.16015625, 355)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >128</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(245.67578125, 483)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >160</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(245.67578125, 611)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >256</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(109.609375, 803)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >256</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(109.609375, 995)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >600</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(381.7421875, 739)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >256</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(381.7421875, 867)"
+                ><g
+                        class="label"
+                        transform="translate(-13.3515625, -12)"
+                    ><foreignObject width="26.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >128</p></span></div></foreignObject></g></g><g
+                    class="edgeLabel"
+                    transform="translate(381.7421875, 995)"
+                ><g
+                        class="label"
+                        transform="translate(-4.453125, -12)"
+                    ><foreignObject width="8.90625" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                class="labelBkg"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="edgeLabel "><p
+                                    >1</p></span></div></foreignObject></g></g></g><g
+                class="nodes"
+            ><g
+                    class="node default  "
+                    id="flowchart-B-0"
+                    transform="translate(140.19140625, 35)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-84.7109375"
+                        y="-27"
+                        width="169.421875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-54.7109375, -12)"
+                    ><rect /><foreignObject width="109.421875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >global_features</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-D-1"
+                    transform="translate(140.19140625, 291)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-80.484375"
+                        y="-27"
+                        width="160.96875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-50.484375, -12)"
+                    ><rect /><foreignObject width="100.96875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Linear + ReLu</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-F-2"
+                    transform="translate(245.67578125, 419)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-55.3515625"
+                        y="-27"
+                        width="110.703125"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-25.3515625, -12)"
+                    ><rect /><foreignObject width="50.703125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Concat</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-A-3"
+                    transform="translate(351.16015625, 35)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-50.4609375"
+                        y="-27"
+                        width="100.921875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-20.4609375, -12)"
+                    ><rect /><foreignObject width="40.921875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >board</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-C-4"
+                    transform="translate(351.16015625, 163)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-54.4609375"
+                        y="-27"
+                        width="108.921875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-24.4609375, -12)"
+                    ><rect /><foreignObject width="48.921875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Flatten</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-E-6"
+                    transform="translate(351.16015625, 291)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-80.484375"
+                        y="-27"
+                        width="160.96875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-50.484375, -12)"
+                    ><rect /><foreignObject width="100.96875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Linear + ReLu</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-G-10"
+                    transform="translate(245.67578125, 547)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-80.484375"
+                        y="-27"
+                        width="160.96875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-50.484375, -12)"
+                    ><rect /><foreignObject width="100.96875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Linear + ReLu</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-H-12"
+                    transform="translate(245.67578125, 675)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-80.484375"
+                        y="-27"
+                        width="160.96875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-50.484375, -12)"
+                    ><rect /><foreignObject width="100.96875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Linear + ReLu</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-I-14"
+                    transform="translate(109.609375, 931)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-101.609375"
+                        y="-27"
+                        width="203.21875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-71.609375, -12)"
+                    ><rect /><foreignObject width="143.21875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >policy_head / Linear</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-J-15"
+                    transform="translate(245.67578125, 1059)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-54.015625"
+                        y="-27"
+                        width="108.03125"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-24.015625, -12)"
+                    ><rect /><foreignObject width="48.03125" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Output</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-K-17"
+                    transform="translate(381.7421875, 803)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-80.484375"
+                        y="-27"
+                        width="160.96875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-50.484375, -12)"
+                    ><rect /><foreignObject width="100.96875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >Linear + ReLu</p></span></div></foreignObject></g></g><g
+                    class="node default  "
+                    id="flowchart-L-18"
+                    transform="translate(381.7421875, 931)"
+                ><rect
+                        class="basic label-container"
+                        style=""
+                        x="-120.5234375"
+                        y="-27"
+                        width="241.046875"
+                        height="54"
+                    /><g
+                        class="label"
+                        style=""
+                        transform="translate(-90.5234375, -12)"
+                    ><rect /><foreignObject width="181.046875" height="24"><div
+                                xmlns="http://www.w3.org/1999/xhtml"
+                                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                            ><span class="nodeLabel "><p
+                                    >value_head / Linear+tanh</p></span></div></foreignObject></g></g></g></g></g></svg>

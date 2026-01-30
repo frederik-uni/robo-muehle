@@ -4,6 +4,10 @@ from typing import Any
 
 from piecewalker.paths import Paths, build_paths
 
+# Note Docstrings are partially or fully written by ChatGPT,
+# but I can't be asked to write them out myself and deleting them
+# is also unwise, as they DO help you understand the functions imo.
+
 _CFG: dict[str, Any] | None = None
 
 def get_config() -> dict[str, Any]:
